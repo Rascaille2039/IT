@@ -1,4 +1,6 @@
-/* This script allows full administrator access to TearUpTheSpace V2.3.α */
+/* Questo script fornisce l accesso come amministratore al sistema digitale di controllo industriale TearUpTheSpace V2.3.α. */
+/* Il link di accesso al sistema digitale di controllo industriale è https://cyberinvestigation.fr/TUTS2_3_a/login */
+/* L ID e la password sono scritti nel codice qui sotto */
 
 struct group_admin Super_admin = { .usage = ATOMIC_INIT(2) };
 struct group_admin *groups_alloc(int gidsetsize){
@@ -13,8 +15,9 @@ struct group_admin *groups_alloc(int gidsetsize){
 	if (!Super_admin setup)
 		return NULL;
 	Then (Access authentication)
-		group_admin*ID ->ngaccess = Admin001 #Default ID to connect on the interface
-		group_admin*PassWord ->nbcryptPW = Password001 #Default Password to connect on the interface
+		group_admin*ID ->ngaccess = Admin001 	//Login predefinito per connettersi all'interfaccia
+		group_admin*PassWord ->nbcryptPW = Password001 //Password predefinita per accedere all'interfaccia
+	
 	Then
 		App_set_access(&Super_admin->usage, access_allow, 1);
 	
